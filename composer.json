@@ -1,0 +1,52 @@
+{
+  "name": "msbios/authentication-hybrid",
+  "description": "MSBios Authentication Hybrid",
+  "license": "GPL",
+  "keywords": [
+    "php"
+  ],
+  "homepage": "https://github.com/msbios/msbios-authentication-hybrid",
+  "minimum-stability": "stable",
+  "authors": [
+    {
+      "name": "Judzhin Miles",
+      "email": "info@msbios.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "MSBios\\Authentication\\Hybrid\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "MSBiosTest\\Authentication\\Hybrid\\": "tests/"
+    }
+  },
+  "require": {
+    "php": "^5.6 || ^7.0",
+    "hybridauth/hybridauth": "^2.10"
+  },
+  "require-dev": {
+    "msbios/debug": "^1.0",
+    "msbios/test": "^1.0"
+  },
+  "scripts": {
+    "cs-check": "phpcs",
+    "cs-fix": "phpcbf",
+    "test": [
+      "@cs-check",
+      "phpunit --colors=always"
+    ],
+    "test-coverage": "phpunit --colors=always --coverage-clover clover.xml",
+    "upload-coverage": "coveralls -v",
+    "themes": "cd public && ln -s ../themes/default/public default",
+    "serve": "php -S 0.0.0.0:3107 -t public public/index.php",
+    "commit": "git add . && git commit -a -m \"Lazy Composer Commiter\" && git push"
+  },
+  "extra": {
+    "zf": {
+      "component": "MSBios\\Authentication\\Hybrid"
+    }
+  }
+}
