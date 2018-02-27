@@ -60,6 +60,6 @@ return [
         "debug_mode" => true,
 
         // Path to file writable by the web server. Required if 'debug_mode' is not false
-        "debug_file" => "./data/logs/hybridauth.log",
+        "debug_file" => "./data/logs/msbios.authentication.hybrid.log",
     ]
 ];
