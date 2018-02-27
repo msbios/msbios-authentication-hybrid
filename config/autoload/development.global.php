@@ -8,5 +8,10 @@ return [
         'default_global_paths' => [
             'default_global_paths' => __DIR__ . '/../../themes/'
         ]
-    ]
+    ],
+    \MSBios\Assetic\Module::class => [
+        'paths' => [
+            __DIR__ . '/../../vendor/msbios/application/themes/default/public/',
+        ],
+    ],
 ];

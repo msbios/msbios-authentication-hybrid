@@ -1,7 +1,7 @@
 {
   "name": "msbios/authentication-hybrid",
   "description": "MSBios Authentication Hybrid",
-  "license": "GPL",
+  "license": "MIT",
   "keywords": [
     "php"
   ],
@@ -24,10 +24,10 @@
     }
   },
   "require": {
-    "php": "^5.6 || ^7.0",
-    "hybridauth/hybridauth": "^2.10"
+    "msbios/hybridauth": "^1.0"
   },
   "require-dev": {
+    "msbios/portal": "^1.0",
     "msbios/debug": "^1.0",
     "msbios/test": "^1.0"
   },
