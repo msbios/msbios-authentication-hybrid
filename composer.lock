@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d4a699479ac88c80d8a5e6c0cffaebfb",
+    "content-hash": "40b645f8247065380bec9168c76e23c5",
     "packages": [
         {
             "name": "facebook/graph-sdk",
@@ -123,16 +123,16 @@
         },
         {
             "name": "msbios/hybridauth",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/msbios/msbios-hybridauth.git",
-                "reference": "53f87d6a7a34cf702428969322ab2d31582f0a8d"
+                "reference": "2be77dbcde1a30b80a0166239b54364dc780f571"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/msbios/msbios-hybridauth/zipball/53f87d6a7a34cf702428969322ab2d31582f0a8d",
-                "reference": "53f87d6a7a34cf702428969322ab2d31582f0a8d",
+                "url": "https://api.github.com/repos/msbios/msbios-hybridauth/zipball/2be77dbcde1a30b80a0166239b54364dc780f571",
+                "reference": "2be77dbcde1a30b80a0166239b54364dc780f571",
                 "shasum": ""
             },
             "require": {
@@ -146,7 +146,7 @@
             "type": "library",
             "extra": {
                 "zf": {
-                    "component": "MSBios\\Hydridauth"
+                    "component": "MSBios\\Hybridauth"
                 }
             },
             "autoload": {
@@ -169,7 +169,7 @@
             "keywords": [
                 "php"
             ],
-            "time": "2018-02-27T09:54:12+00:00"
+            "time": "2018-02-27T11:00:06+00:00"
         },
         {
             "name": "paypal/rest-api-sdk-php",
