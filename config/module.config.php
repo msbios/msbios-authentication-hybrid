@@ -1,36 +1,40 @@
 <?php
 /**
- * @link      http://github.com/zendframework/ZendSkeletonApplication for the canonical source repository
- * @copyright Copyright (c) 2005-2016 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd New BSD License
+ * @access protected
+ * @author Judzhin Miles <info[woof-woof]msbios.com>
  */
+namespace MSBios\Authentication\Hybrid;
 
-namespace MSBios\Application;
-
-use Zend\Router\Http\Literal;
 use Zend\Router\Http\Segment;
 use Zend\ServiceManager\Factory\InvokableFactory;
 
 return [
+
     'router' => [
         'routes' => [
-            'home' => [
-                'type' => Literal::class,
-                'options' => [
-                    'route' => '/',
-                    'defaults' => [
-                        'controller' => Controller\IndexController::class,
-                        'action' => 'index',
+            'hybridauth' => [
+                 'may_terminate' => true,
+                'child_routes' => [
+                    'provider' => [
+                        'type' => Segment::class,
+                        'options' => [
+                            'route' => ':identifier[/]',
+                            'defaults' => [
+                                'controller' => Controller\ProviderController::class,
+                                'action' => 'index'
+                            ]
+                        ]
                     ],
-                ],
-            ],
-            'application' => [
-                'type' => Segment::class,
-                'options' => [
-                    'route' => '/application[/:action]',
-                    'defaults' => [
-                        'controller' => Controller\IndexController::class,
-                        'action' => 'index',
+                    'authenticate' => [
+                        'type' => Segment::class,
+                        'options' => [
+                            'route' => 'authenticate[/]',
+                            'defaults' => [
+                                'controller' => Controller\ProviderController::class,
+                                'action' => 'authenticate'
+                            ]
+                        ],
+                        'may_terminate' => true,
                     ],
                 ],
             ],
@@ -39,59 +43,8 @@ return [
 
     'controllers' => [
         'factories' => [
-            Controller\IndexController::class =>
-                InvokableFactory::class,
-        ]
-    ],
-
-    'view_manager' => [
-        'display_not_found_reason' => true,
-        'display_exceptions' => true,
-        'doctype' => 'HTML5',
-        'not_found_template' => 'error/404',
-        'exception_template' => 'error/index',
-        'template_map' => [
-            // 'layout/layout'           => __DIR__ . '/../view/layout/layout.phtml',
-            // 'application/index/index' => __DIR__ . '/../view/application/index/index.phtml',
-            // 'error/404'               => __DIR__ . '/../view/error/404.phtml',
-            // 'error/index'             => __DIR__ . '/../view/error/index.phtml',
-        ],
-        'template_path_stack' => [
-            __DIR__ . '/../view',
-        ],
-    ],
-
-    'widget_manager' => [
-        'factories' => [
-            Widget\FollowDevelopmentWidget::class =>
+            Controller\ProviderController::class =>
                 InvokableFactory::class
-        ]
+        ],
     ],
-
-    \MSBios\Theme\Module::class => [
-        'themes' => [
-            'default' => [
-                'identifier' => 'default',
-                'title' => 'Default Application Theme',
-                'description' => 'Default Application Theme Description',
-                'template_path_stack' => [
-                    __DIR__ . '/../themes/default/view/',
-                ],
-                'translation_file_patterns' => [
-                    [
-                        'type' => 'gettext',
-                        'base_dir' => __DIR__ . '/../themes/default/language/',
-                        'pattern' => '%s.mo',
-                    ],
-                ],
-                'widget_manager' => [
-                    'template_map' => [
-                    ],
-                    'template_path_stack' => [
-                        __DIR__ . '/../themes/default/widget/'
-                    ],
-                ],
-            ]
-        ]
-    ]
 ];
