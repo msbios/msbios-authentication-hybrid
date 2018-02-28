@@ -41,7 +41,7 @@ return [
                             ],
                         ],
                     ],
-                    'clear' => [
+                    'logout' => [
                         'type' => Segment::class,
                         'options' => [
                             'route' => 'logout[/]',
