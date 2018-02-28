@@ -44,9 +44,9 @@ return [
                     'clear' => [
                         'type' => Segment::class,
                         'options' => [
-                            'route' => 'clear[/]',
+                            'route' => 'logout[/]',
                             'defaults' => [
-                                'action' => 'clear'
+                                'action' => 'logout'
                             ]
                         ],
                     ],

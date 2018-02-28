@@ -9,11 +9,8 @@ namespace MSBios\Authentication\Hybrid\Controller;
 use MSBios\Authentication\AuthenticationServiceAwareInterface;
 use MSBios\Authentication\AuthenticationServiceAwareTrait;
 use MSBios\Hybridauth\Controller\IndexController;
-use MSBios\Hybridauth\HybridauthManagerAwareInterface;
-use MSBios\Hybridauth\HybridauthManagerAwareTrait;
 use MSBios\Hybridauth\HybridauthManagerInterface;
 use Zend\Http\PhpEnvironment\Response;
-use Zend\Mvc\Controller\AbstractActionController;
 use Zend\Router\Http\RouteMatch;
 
 /**
@@ -119,10 +116,14 @@ class HybridController extends IndexController implements
 //        return $this->forward()->dispatch('zfcuser', ['action' => 'authenticate']);
     }
 
-    public function clearAction()
+    /**
+     * @return \Zend\Http\Response
+     */
+    public function logoutAction()
     {
+        $this->getAuthenticationService()->clearIdentity();
+        // return $this->forward()->dispatch('zfcuser', array('action' => 'logout'));
         \Hybrid_Auth::logoutAllProviders();
         return $this->redirect()->toRoute('home');
-        // return $this->forward()->dispatch('zfcuser', array('action' => 'logout'));
     }
 }
