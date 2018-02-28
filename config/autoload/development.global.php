@@ -35,18 +35,25 @@ return [
 
     \MSBios\Hybridauth\Module::class => [
 
-        "base_url" => "http://0.0.0.0:3107",
+        "base_url" => "http://0.0.0.0:3107/hybridauth/",
 
         "providers" => [
             "Facebook" => [
                 "enabled" => true,
                 "keys" => ["id" => "", "secret" => ""], // in development.local.php
-                "scope"   => ['email', 'user_about_me', 'user_birthday', 'user_hometown'], // optional
+                "scope" => ['email', 'user_about_me', 'user_birthday', 'user_hometown'], // optional
                 "photo_size" => 200, // optional
             ],
             "Google" => [
                 "enabled" => true,
                 "keys" => ["id" => "", "secret" => ""], // in development.local.php
+                "scope" =>
+                    "https://www.googleapis.com/auth/plus.login ", // . // optional
+                // "https://www.googleapis.com/auth/plus.me " . // optional
+                // "https://www.googleapis.com/auth/plus.profile.emails.read", // optional
+                "access_type" => "offline",   // optional
+                "approval_prompt" => "force",     // optional
+                "hd" => "domain.com" // optional
             ],
             "Twitter" => [
                 "enabled" => true,

@@ -123,16 +123,16 @@
         },
         {
             "name": "msbios/hybridauth",
-            "version": "v1.0.7",
+            "version": "v1.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/msbios/msbios-hybridauth.git",
-                "reference": "5477c27d4a3a4ded322fe8c9af41fecc88d02d93"
+                "reference": "aa735153b6105565971dbb0f070658f0a6c3cc24"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/msbios/msbios-hybridauth/zipball/5477c27d4a3a4ded322fe8c9af41fecc88d02d93",
-                "reference": "5477c27d4a3a4ded322fe8c9af41fecc88d02d93",
+                "url": "https://api.github.com/repos/msbios/msbios-hybridauth/zipball/aa735153b6105565971dbb0f070658f0a6c3cc24",
+                "reference": "aa735153b6105565971dbb0f070658f0a6c3cc24",
                 "shasum": ""
             },
             "require": {
@@ -169,7 +169,7 @@
             "keywords": [
                 "php"
             ],
-            "time": "2018-02-27T14:41:30+00:00"
+            "time": "2018-02-28T07:49:15+00:00"
         },
         {
             "name": "paypal/rest-api-sdk-php",
@@ -3526,16 +3526,16 @@
         },
         {
             "name": "tracy/tracy",
-            "version": "v2.4.11",
+            "version": "v2.4.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/tracy.git",
-                "reference": "bcb93a9d4347be8779c83b200b64ea6f52d6f9ed"
+                "reference": "4182ce7b92f67002509b7fa2fc34bd84deea0b24"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/tracy/zipball/bcb93a9d4347be8779c83b200b64ea6f52d6f9ed",
-                "reference": "bcb93a9d4347be8779c83b200b64ea6f52d6f9ed",
+                "url": "https://api.github.com/repos/nette/tracy/zipball/4182ce7b92f67002509b7fa2fc34bd84deea0b24",
+                "reference": "4182ce7b92f67002509b7fa2fc34bd84deea0b24",
                 "shasum": ""
             },
             "require": {
@@ -3587,7 +3587,7 @@
                 "nette",
                 "profiler"
             ],
-            "time": "2018-02-01T18:11:38+00:00"
+            "time": "2018-02-28T00:49:47+00:00"
         },
         {
             "name": "webmozart/assert",

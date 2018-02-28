@@ -6,9 +6,7 @@
 namespace MSBios\Authentication\Hybrid;
 
 use MSBios\AutoloaderAwareInterface;
-use MSBios\AutoloaderAwareTrait;
 use MSBios\ModuleAwareInterface;
-use MSBios\ModuleAwareTrait;
 use MSBios\ModuleInterface;
 use Zend\Loader\AutoloaderFactory;
 use Zend\Loader\StandardAutoloader;
@@ -22,6 +20,10 @@ class Module implements
     ModuleAwareInterface,
     AutoloaderAwareInterface
 {
+
+    /** @const VERSION */
+    const VERSION = '1.0.2';
+
     /**
      * Returns configuration to merge with application configuration
      *
@@ -47,7 +49,4 @@ class Module implements
             ],
         ];
     }
-
-    /** @const VERSION */
-    const VERSION = '1.0.1';
 }

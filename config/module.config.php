@@ -13,28 +13,42 @@ return [
     'router' => [
         'routes' => [
             'hybridauth' => [
-                 'may_terminate' => true,
+                'options' => [
+                    'defaults' => [
+                        'controller' => Controller\HybridController::class,
+                    ]
+                ],
+                'may_terminate' => true,
                 'child_routes' => [
                     'provider' => [
                         'type' => Segment::class,
                         'options' => [
                             'route' => ':identifier[/]',
                             'defaults' => [
-                                'controller' => Controller\ProviderController::class,
-                                'action' => 'index'
-                            ]
-                        ]
-                    ],
-                    'authenticate' => [
-                        'type' => Segment::class,
-                        'options' => [
-                            'route' => 'authenticate[/]',
-                            'defaults' => [
-                                'controller' => Controller\ProviderController::class,
-                                'action' => 'authenticate'
+                                'action' => 'provider'
                             ]
                         ],
                         'may_terminate' => true,
+                        'child_routes' => [
+                            'authenticate' => [
+                                'type' => Segment::class,
+                                'options' => [
+                                    'route' => 'authenticate[/]',
+                                    'defaults' => [
+                                        'action' => 'authenticate'
+                                    ]
+                                ],
+                            ],
+                        ],
+                    ],
+                    'clear' => [
+                        'type' => Segment::class,
+                        'options' => [
+                            'route' => 'clear[/]',
+                            'defaults' => [
+                                'action' => 'clear'
+                            ]
+                        ],
                     ],
                 ],
             ],
@@ -43,7 +57,7 @@ return [
 
     'controllers' => [
         'factories' => [
-            Controller\ProviderController::class =>
+            Controller\HybridController::class =>
                 InvokableFactory::class
         ],
     ],
