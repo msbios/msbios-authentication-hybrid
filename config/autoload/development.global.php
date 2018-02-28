@@ -41,7 +41,8 @@ return [
             "Facebook" => [
                 "enabled" => true,
                 "keys" => ["id" => "", "secret" => ""], // in development.local.php
-                "trustForwarded" => false,
+                "scope"   => ['email', 'user_about_me', 'user_birthday', 'user_hometown'], // optional
+                "photo_size" => 200, // optional
             ],
             "Google" => [
                 "enabled" => true,

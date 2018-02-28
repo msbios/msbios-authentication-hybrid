@@ -3,6 +3,7 @@
  * @access protected
  * @author Judzhin Miles <info[woof-woof]msbios.com>
  */
+
 namespace MSBios\Authentication\Hybrid\Controller;
 
 use MSBios\Hybridauth\HybridauthAwareInterface;
@@ -10,7 +11,6 @@ use MSBios\Hybridauth\HybridauthAwareTrait;
 use MSBios\Hybridauth\HybridauthInterface;
 use Zend\Http\PhpEnvironment\Response;
 use Zend\Mvc\Controller\AbstractActionController;
-use Zend\Router\Exception\RuntimeException;
 use Zend\Router\Http\RouteMatch;
 
 /**
@@ -35,18 +35,18 @@ class ProviderController extends AbstractActionController implements
             'hauth_return_to' => '/hybridauth/authenticate',
         ]);
 
-        /** @var RouteMatch $routeMatch */
-        $routeMatch = $this->getEvent()->getRouteMatch();
-        // $redirect = $this->getRedirect($routeMatch->getMatchedRouteName(), $this->getRedirectRouteFromRequest());
-
-        $redirect = 'http://0.0.0.0:3107/hybridauth/authenticate';
-
-        /** @var Response $response */
-        $response = $this->getResponse();
-        $response->getHeaders()->addHeaderLine('Location', $redirect);
-        $response->setStatusCode(Response::STATUS_CODE_302);
-
-        return $response;
+        // /** @var RouteMatch $routeMatch */
+        // $routeMatch = $this->getEvent()->getRouteMatch();
+        // // $redirect = $this->getRedirect($routeMatch->getMatchedRouteName(), $this->getRedirectRouteFromRequest());
+        //
+        // $redirect = 'http://0.0.0.0:3107/hybridauth/authenticate';
+        //
+        // /** @var Response $response */
+        // $response = $this->getResponse();
+        // $response->getHeaders()->addHeaderLine('Location', $redirect);
+        // $response->setStatusCode(Response::STATUS_CODE_302);
+        //
+        // return $response;
 
     }
 
@@ -57,7 +57,7 @@ class ProviderController extends AbstractActionController implements
      */
     private function getRedirectRouteFromRequest()
     {
-        $request  = $this->getRequest();
+        $request = $this->getRequest();
         $redirect = $request->getQuery('redirect');
         if ($redirect && $this->routeExists($redirect)) {
             return $redirect;
@@ -91,7 +91,8 @@ class ProviderController extends AbstractActionController implements
      */
     public function authenticateAction()
     {
-        echo __METHOD__; die();
+        echo __METHOD__;
+        die();
         // For provider authentication, change the auth adapter in the ZfcUser Controller Plugin
         $this->zfcUserAuthentication()->setAuthAdapter($this->getScnAuthAdapterChain());
 
