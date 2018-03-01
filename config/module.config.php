@@ -61,4 +61,11 @@ return [
                 InvokableFactory::class
         ],
     ],
+
+    'service_manager' => [
+        'factories' => [
+            ProviderManager::class =>
+                InvokableFactory::class
+        ]
+    ]
 ];
