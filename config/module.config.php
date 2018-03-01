@@ -39,6 +39,15 @@ return [
                                     ]
                                 ],
                             ],
+                            'add' => [
+                                'type' => Segment::class,
+                                'options' => [
+                                    'route' => 'add[/]',
+                                    'defaults' => [
+                                        'action' => 'add'
+                                    ]
+                                ],
+                            ],
                         ],
                     ],
                     'logout' => [
