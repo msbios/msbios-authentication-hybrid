@@ -13,10 +13,10 @@ use Zend\Authentication\AuthenticationService;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
 /**
- * Class HybridauthControllerFactory
+ * Class HybridControllerFactory
  * @package MSBios\Authentication\Hybrid\Factory
  */
-class HybridauthControllerFactory implements FactoryInterface
+class HybridControllerFactory implements FactoryInterface
 {
     /**
      * @param ContainerInterface $container
