@@ -58,7 +58,7 @@ return [
     'controllers' => [
         'factories' => [
             Controller\HybridController::class =>
-                InvokableFactory::class
+                Factory\HybridauthControllerFactory::class
         ],
     ],
 

@@ -8,8 +8,14 @@ namespace MSBios\Authentication\Hybrid\Controller;
 
 use MSBios\Authentication\AuthenticationServiceAwareInterface;
 use MSBios\Authentication\AuthenticationServiceAwareTrait;
+use MSBios\Authentication\Hybrid\ProviderManagerAwareTrait;
+use MSBios\Authentication\Hybrid\ProviderManagerInterface;
 use MSBios\Hybridauth\Controller\IndexController;
+use MSBios\Hybridauth\HybridauthManager;
+use MSBios\Hybridauth\HybridauthManagerAwareTrait;
 use MSBios\Hybridauth\HybridauthManagerInterface;
+use Zend\Authentication\AuthenticationService;
+use Zend\Authentication\AuthenticationServiceInterface;
 use Zend\Http\PhpEnvironment\Response;
 use Zend\Router\Http\RouteMatch;
 
@@ -17,10 +23,31 @@ use Zend\Router\Http\RouteMatch;
  * Class HybridController
  * @package MSBios\Authentication\Hybrid\Controller
  */
-class HybridController extends IndexController implements
-    AuthenticationServiceAwareInterface
+class HybridController extends IndexController
 {
+
+    /**
+     * @link https://docs.zendframework.com/zend-servicemanager/configuring-the-service-manager/#best-practices_2
+     */
     use AuthenticationServiceAwareTrait;
+    use HybridauthManagerAwareTrait;
+    use ProviderManagerAwareTrait;
+
+    /**
+     * HybridController constructor.
+     * @param AuthenticationServiceInterface $authenticationService
+     * @param HybridauthManagerInterface $hybridauthManager
+     * @param ProviderManagerInterface $providerManager
+     */
+    public function __construct(
+        AuthenticationServiceInterface $authenticationService,
+        HybridauthManagerInterface $hybridauthManager,
+        ProviderManagerInterface $providerManager
+    ) {
+        $this->setAuthenticationService($authenticationService);
+        $this->setHybridauthManager($hybridauthManager);
+        $this->setProviderManager($providerManager);
+    }
 
     /**
      * @return Response
