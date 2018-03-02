@@ -13,11 +13,21 @@ use MSBios\Authentication\IdentityInterface;
  */
 class ProviderManager implements ProviderManagerInterface
 {
-    public function find(\Hybrid_User_Profile $profile, $identifier)
+    /**
+     * @param \Hybrid_User_Profile $profile
+     * @param $identifier
+     * @param IdentityInterface|null $identity
+     */
+    public function find(\Hybrid_User_Profile $profile, $identifier, IdentityInterface $identity = null)
     {
         // TODO: Implement find() method.
     }
 
+    /**
+     * @param IdentityInterface $identity
+     * @param \Hybrid_User_Profile $profile
+     * @param $identifier
+     */
     public function write(IdentityInterface $identity, \Hybrid_User_Profile $profile, $identifier)
     {
         // TODO: Implement write() method.

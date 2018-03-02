@@ -16,9 +16,10 @@ interface ProviderManagerInterface
     /**
      * @param \Hybrid_User_Profile $profile
      * @param $identifier
+     * @param IdentityInterface|null $identity
      * @return mixed
      */
-    public function find(\Hybrid_User_Profile $profile, $identifier);
+    public function find(\Hybrid_User_Profile $profile, $identifier, IdentityInterface $identity = null);
 
     /**
      * @param IdentityInterface $identity
