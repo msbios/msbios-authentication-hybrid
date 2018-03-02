@@ -7,6 +7,7 @@ namespace MSBios\Authentication\Hybrid\Factory;
 
 use Interop\Container\ContainerInterface;
 use MSBios\Authentication\Hybrid\Controller\HybridController;
+use MSBios\Authentication\Hybrid\IdentityResolver;
 use MSBios\Authentication\Hybrid\ProviderManager;
 use MSBios\Hybridauth\HybridauthManager;
 use Zend\Authentication\AuthenticationService;
@@ -29,7 +30,8 @@ class HybridControllerFactory implements FactoryInterface
         return new HybridController(
             $container->get(AuthenticationService::class),
             $container->get(HybridauthManager::class),
-            $container->get(ProviderManager::class)
+            $container->get(ProviderManager::class),
+            $container->get(IdentityResolver::class)
         );
     }
 }
