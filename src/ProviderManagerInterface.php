@@ -14,15 +14,17 @@ use MSBios\Authentication\IdentityInterface;
 interface ProviderManagerInterface
 {
     /**
-     * @param IdentityInterface $identity
+     * @param \Hybrid_User_Profile $profile
      * @param $identifier
+     * @return mixed
      */
-    public function find(IdentityInterface $identity, $identifier);
+    public function find(\Hybrid_User_Profile $profile, $identifier);
 
     /**
      * @param IdentityInterface $identity
      * @param \Hybrid_User_Profile $profile
      * @param $identifier
+     * @return mixed
      */
     public function write(IdentityInterface $identity, \Hybrid_User_Profile $profile, $identifier);
 }
