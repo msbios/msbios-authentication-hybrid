@@ -8,6 +8,8 @@ namespace MSBios\Authentication\Hybrid\Controller;
 
 use MSBios\Authentication\AuthenticationServiceAwareInterface;
 use MSBios\Authentication\AuthenticationServiceAwareTrait;
+use MSBios\Authentication\Hybrid\IdentityResolverAwareTrait;
+use MSBios\Authentication\Hybrid\IdentityResolverInterface;
 use MSBios\Authentication\Hybrid\ProviderManagerAwareTrait;
 use MSBios\Authentication\Hybrid\ProviderManagerInterface;
 use MSBios\Hybridauth\Controller\IndexController;
@@ -32,21 +34,25 @@ class HybridController extends IndexController
     use AuthenticationServiceAwareTrait;
     use HybridauthManagerAwareTrait;
     use ProviderManagerAwareTrait;
+    use IdentityResolverAwareTrait;
 
     /**
      * HybridController constructor.
      * @param AuthenticationServiceInterface $authenticationService
      * @param HybridauthManagerInterface $hybridauthManager
      * @param ProviderManagerInterface $providerManager
+     * @param IdentityResolverInterface $identityResolver
      */
     public function __construct(
         AuthenticationServiceInterface $authenticationService,
         HybridauthManagerInterface $hybridauthManager,
-        ProviderManagerInterface $providerManager
+        ProviderManagerInterface $providerManager,
+        IdentityResolverInterface $identityResolver
     ) {
         $this->setAuthenticationService($authenticationService);
         $this->setHybridauthManager($hybridauthManager);
         $this->setProviderManager($providerManager);
+        $this->setIdentityResolver($identityResolver);
     }
 
     /**

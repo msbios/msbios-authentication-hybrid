@@ -37,8 +37,7 @@ class IdentityResolverFactory implements FactoryInterface
          * @var int $priority
          */
         foreach ($options['identity_resolvers'] as $resolver => $priority) {
-
-            if (!$container->has($resolver)) {
+            if (! $container->has($resolver)) {
                 // ... Must be Exception
             }
 
