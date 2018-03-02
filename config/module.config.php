@@ -3,6 +3,7 @@
  * @access protected
  * @author Judzhin Miles <info[woof-woof]msbios.com>
  */
+
 namespace MSBios\Authentication\Hybrid;
 
 use Zend\Router\Http\Segment;
@@ -73,8 +74,22 @@ return [
 
     'service_manager' => [
         'factories' => [
+            IdentityResolver::class =>
+                Factory\IdentityResolverFactory::class,
+            Module::class =>
+                Factory\ModuleFactory::class,
             ProviderManager::class =>
                 InvokableFactory::class
+        ]
+    ],
+
+    Module::class => [
+
+        /**
+         *
+         */
+        'identity_resolvers' => [
+
         ]
     ]
 ];
