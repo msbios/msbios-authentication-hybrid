@@ -78,7 +78,15 @@ return [
                 Factory\IdentityResolverFactory::class,
             Module::class =>
                 Factory\ModuleFactory::class,
+
+            // resolver managers
             ProviderManager::class =>
+                InvokableFactory::class,
+
+            // resolvers
+            Resolver\EmailResolver::class =>
+                InvokableFactory::class,
+            Resolver\PhoneResolver::class =>
                 InvokableFactory::class
         ]
     ],
@@ -89,7 +97,6 @@ return [
          *
          */
         'identity_resolvers' => [
-
         ]
     ]
 ];
