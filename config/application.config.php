@@ -6,6 +6,7 @@
 return [
     // Retrieve list of modules used in this application.
     'modules' => [
+        'MSBios\Authentication\Hybrid\Resource',
         'Zend\I18n',
         'Zend\Navigation',
         'Zend\Mvc\Plugin\FilePrg',

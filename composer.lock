@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "40b645f8247065380bec9168c76e23c5",
+    "content-hash": "65d5fca5ca0ba5d53bff80646356d6a0",
     "packages": [
         {
             "name": "facebook/graph-sdk",
@@ -120,6 +120,53 @@
                 "yahoo"
             ],
             "time": "2017-11-29T17:29:38+00:00"
+        },
+        {
+            "name": "msbios/authentication-hybrid-resource",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/msbios/msbios-authentication-hybrid-resource.git",
+                "reference": "793a61b007848999796441ffac451f33551ef8b2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/msbios/msbios-authentication-hybrid-resource/zipball/793a61b007848999796441ffac451f33551ef8b2",
+                "reference": "793a61b007848999796441ffac451f33551ef8b2",
+                "shasum": ""
+            },
+            "require-dev": {
+                "msbios/debug": "^1.0",
+                "msbios/portal": "^1.0",
+                "msbios/test": "^1.0"
+            },
+            "type": "library",
+            "extra": {
+                "zf": {
+                    "component": "MSBios\\Authentication\\Hybrid\\Resource"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "MSBios\\Authentication\\Hybrid\\Resource\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Judzhin Miles",
+                    "email": "info@msbios.com"
+                }
+            ],
+            "description": "MSBios Authentication Hybrid Resource",
+            "homepage": "https://github.com/msbios/msbios-authentication-hybrid-resource",
+            "keywords": [
+                "php"
+            ],
+            "time": "2018-03-03T17:05:49+00:00"
         },
         {
             "name": "msbios/hybridauth",
