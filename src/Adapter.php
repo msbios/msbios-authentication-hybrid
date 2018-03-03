@@ -39,7 +39,9 @@ class Adapter implements AdapterInterface
         $identity = $identity ?: $this->identity;
 
         return new AuthenticationResult(
-            AuthenticationResult::SUCCESS, $identity, ['Authentication successful.']
+            AuthenticationResult::SUCCESS,
+            $identity,
+            ['Authentication successful.']
         );
     }
 }

@@ -53,10 +53,11 @@ class IdentityResolver implements IdentityResolverInterface
     /**
      * @param ResolverInterface $resolver
      * @param int $priority
-     * @return mixed
+     * @return $this
      */
     public function attach(ResolverInterface $resolver, $priority = 1)
     {
-        // TODO: Implement attach() method.
+        $this->queue->insert($resolver, $priority);
+        return $this;
     }
 }
