@@ -3,9 +3,11 @@
  * @access protected
  * @author Judzhin Miles <info[woof-woof]msbios.com>
  */
+
 namespace MSBios\Authentication\Hybrid;
 
-use Zend\Authentication\Adapter\AdapterInterface;
+use MSBios\Authentication\IdentityInterface;
+use Zend\Authentication\Result as AuthenticationResult;
 
 /**
  * Class Adapter
@@ -13,14 +15,31 @@ use Zend\Authentication\Adapter\AdapterInterface;
  */
 class Adapter implements AdapterInterface
 {
+    /** @var  IdentityInterface */
+    protected $identity;
+
     /**
-     * Performs an authentication attempt
-     *
-     * @return \Zend\Authentication\Result
-     * @throws \Zend\Authentication\Adapter\Exception\ExceptionInterface If authentication cannot be performed
+     * Adapter constructor.
+     * @param IdentityInterface $identity
      */
-    public function authenticate()
+    public function __construct(IdentityInterface $identity = null)
     {
-        // TODO: Implement authenticate() method.
+        $this->identity = $identity;
+    }
+
+    /**
+     * @inheritdoc
+     *
+     * @param IdentityInterface|null $identity
+     * @return AuthenticationResult
+     */
+    public function authenticate(IdentityInterface $identity = null)
+    {
+        /** @var IdentityInterface $identity */
+        $identity = $identity ?: $this->identity;
+
+        return new AuthenticationResult(
+            AuthenticationResult::SUCCESS, $identity, ['Authentication successful.']
+        );
     }
 }
