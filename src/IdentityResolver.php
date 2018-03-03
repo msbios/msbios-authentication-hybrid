@@ -40,7 +40,6 @@ class IdentityResolver implements IdentityResolverInterface
         if (count($this->queue)) {
             /** @var ResolverInterface $resolver */
             foreach ($this->queue as $resolver) {
-
                 /** @var IdentityInterface $identity */
                 if ($identity = $resolver->find($profile)) {
                     return $identity;
@@ -53,7 +52,7 @@ class IdentityResolver implements IdentityResolverInterface
     /**
      * @param ResolverInterface $resolver
      * @param int $priority
-     * @return $this
+     * @return mixed
      */
     public function attach(ResolverInterface $resolver, $priority = 1)
     {
