@@ -123,16 +123,16 @@
         },
         {
             "name": "msbios/authentication-hybrid-resource",
-            "version": "v1.0.1",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/msbios/msbios-authentication-hybrid-resource.git",
-                "reference": "793a61b007848999796441ffac451f33551ef8b2"
+                "reference": "c7f276f8b173111a1ede522c302fb7989e403773"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/msbios/msbios-authentication-hybrid-resource/zipball/793a61b007848999796441ffac451f33551ef8b2",
-                "reference": "793a61b007848999796441ffac451f33551ef8b2",
+                "url": "https://api.github.com/repos/msbios/msbios-authentication-hybrid-resource/zipball/c7f276f8b173111a1ede522c302fb7989e403773",
+                "reference": "c7f276f8b173111a1ede522c302fb7989e403773",
                 "shasum": ""
             },
             "require-dev": {
@@ -166,7 +166,7 @@
             "keywords": [
                 "php"
             ],
-            "time": "2018-03-03T17:05:49+00:00"
+            "time": "2018-03-03T17:53:14+00:00"
         },
         {
             "name": "msbios/hybridauth",
@@ -1016,16 +1016,16 @@
         },
         {
             "name": "msbios/authentication",
-            "version": "v1.0.10",
+            "version": "v1.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/msbios/msbios-authentication.git",
-                "reference": "9c9ddd7b7df9e150d50338e0790b7e9e360031b8"
+                "reference": "8947eb9d8c3f615819b3102c22a8d1bb06899335"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/msbios/msbios-authentication/zipball/9c9ddd7b7df9e150d50338e0790b7e9e360031b8",
-                "reference": "9c9ddd7b7df9e150d50338e0790b7e9e360031b8",
+                "url": "https://api.github.com/repos/msbios/msbios-authentication/zipball/8947eb9d8c3f615819b3102c22a8d1bb06899335",
+                "reference": "8947eb9d8c3f615819b3102c22a8d1bb06899335",
                 "shasum": ""
             },
             "require": {
@@ -1062,7 +1062,7 @@
             "keywords": [
                 "php"
             ],
-            "time": "2018-02-09T13:38:02+00:00"
+            "time": "2018-03-03T21:15:50+00:00"
         },
         {
             "name": "msbios/cpanel",
