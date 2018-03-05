@@ -11,6 +11,7 @@ use MSBios\Authentication\Hybrid\IdentityResolverAwareTrait;
 use MSBios\Authentication\Hybrid\IdentityResolverInterface;
 use MSBios\Authentication\Hybrid\ProviderManagerAwareTrait;
 use MSBios\Authentication\Hybrid\ProviderManagerInterface;
+use MSBios\Authentication\IdentityInterface;
 use MSBios\Hybridauth\Controller\IndexController;
 use MSBios\Hybridauth\HybridauthManagerAwareTrait;
 use MSBios\Hybridauth\HybridauthManagerInterface;
@@ -78,6 +79,50 @@ class HybridController extends IndexController
     public function authenticateAction()
     {
         // TODO:
+    }
+
+    /**
+     * @return \Zend\Http\Response
+     */
+    public function addAction()
+    {
+        /** @var AuthenticationServiceInterface $authenticationService */
+        $authenticationService = $this->getAuthenticationService();
+
+        if (! $authenticationService->hasIdentity()) {
+            return $this->redirect()->toRoute('home');
+        }
+
+        /** @var string $identifier */
+        $identifier = $this->params()->fromRoute('identifier');
+
+        /** @var \Hybrid_User_Profile $userProfile */
+        $userProfile = $this->getHybridauthManager()
+            ->authenticate($identifier)
+            ->getUserProfile();
+
+        $this->writeProvider(
+            $authenticationService->getIdentity(),
+            $userProfile,
+            $identifier
+        );
+
+        return $this->redirect()->toRoute('home');
+    }
+
+    /**
+     * @param IdentityInterface $identity
+     * @param \Hybrid_User_Profile $userProfile
+     * @param $identifier
+     * @return mixed
+     */
+    protected function writeProvider(IdentityInterface $identity, \Hybrid_User_Profile $userProfile, $identifier)
+    {
+        return $this->getProviderManager()->write(
+            $identity,
+            $userProfile,
+            $identifier
+        );
     }
 
     /**
