@@ -6,14 +6,12 @@
 namespace MSBios\Authentication\Hybrid\Controller;
 
 use MSBios\Application\Controller\IndexController as DefaultIndexController;
-use MSBios\Hybridauth\HybridauthManagerAwareInterface;
-use MSBios\Hybridauth\HybridauthManagerAwareTrait;
 
 /**
  * Class IndexController
  * @package MSBios\Authentication\Hybrid\Controller
  */
-class IndexController extends DefaultIndexController implements HybridauthManagerAwareInterface
+class IndexController extends DefaultIndexController
 {
-    use HybridauthManagerAwareTrait;
+    // ...
 }

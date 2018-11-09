@@ -921,16 +921,16 @@
         },
         {
             "name": "msbios/authentication",
-            "version": "v1.0.14",
+            "version": "v1.0.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/msbios/msbios-authentication.git",
-                "reference": "7b2edd8446962cc18d40d6c1984c52b47461877f"
+                "reference": "9bf9b29e70e0a01d51e7f7b3947417a11c737e7e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/msbios/msbios-authentication/zipball/7b2edd8446962cc18d40d6c1984c52b47461877f",
-                "reference": "7b2edd8446962cc18d40d6c1984c52b47461877f",
+                "url": "https://api.github.com/repos/msbios/msbios-authentication/zipball/9bf9b29e70e0a01d51e7f7b3947417a11c737e7e",
+                "reference": "9bf9b29e70e0a01d51e7f7b3947417a11c737e7e",
                 "shasum": ""
             },
             "require": {
@@ -967,7 +967,7 @@
             "keywords": [
                 "php"
             ],
-            "time": "2018-11-09T10:09:59+00:00"
+            "time": "2018-11-09T11:44:18+00:00"
         },
         {
             "name": "msbios/cache",
@@ -1235,16 +1235,16 @@
         },
         {
             "name": "msbios/guard",
-            "version": "v1.0.24",
+            "version": "v1.0.25",
             "source": {
                 "type": "git",
                 "url": "https://github.com/msbios/msbios-guard.git",
-                "reference": "047000a44ed5382a2be3885b9dcf075093302146"
+                "reference": "f2498073995f719f1cdeb4ec7839bc5f6831803d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/msbios/msbios-guard/zipball/047000a44ed5382a2be3885b9dcf075093302146",
-                "reference": "047000a44ed5382a2be3885b9dcf075093302146",
+                "url": "https://api.github.com/repos/msbios/msbios-guard/zipball/f2498073995f719f1cdeb4ec7839bc5f6831803d",
+                "reference": "f2498073995f719f1cdeb4ec7839bc5f6831803d",
                 "shasum": ""
             },
             "require": {
@@ -1286,7 +1286,7 @@
             "keywords": [
                 "php"
             ],
-            "time": "2018-11-08T21:59:59+00:00"
+            "time": "2018-11-09T17:22:43+00:00"
         },
         {
             "name": "msbios/guard-cpanel",

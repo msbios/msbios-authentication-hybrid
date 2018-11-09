@@ -17,6 +17,7 @@ use MSBios\Hybridauth\HybridauthManagerAwareTrait;
 use MSBios\Hybridauth\HybridauthManagerInterface;
 use Zend\Authentication\AuthenticationServiceInterface;
 use Zend\Http\PhpEnvironment\Response;
+use Zend\View\Model\ViewModel;
 
 /**
  * Class HybridController
@@ -73,11 +74,11 @@ class HybridController extends IndexController
     }
 
     /**
-     * @return mixed
+     * @return ViewModel
      */
     public function authenticateAction()
     {
-        // TODO:
+        return new ViewModel;
     }
 
     /**
