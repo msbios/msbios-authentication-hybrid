@@ -24,7 +24,6 @@ use Zend\Http\PhpEnvironment\Response;
  */
 class HybridController extends IndexController
 {
-
     /**
      * @link https://docs.zendframework.com/zend-servicemanager/configuring-the-service-manager/#best-practices_2
      */
@@ -130,8 +129,9 @@ class HybridController extends IndexController
      */
     public function logoutAction()
     {
-        $this->getAuthenticationService()->clearIdentity();
-        \Hybrid_Auth::logoutAllProviders();
-        return $this->redirect()->toRoute('home');
+        $this->getAuthenticationService()
+            ->clearIdentity();
+        return $this->redirect()
+            ->toRoute('home');
     }
 }

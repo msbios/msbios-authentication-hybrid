@@ -10,6 +10,12 @@ use Zend\ServiceManager\Factory\InvokableFactory;
 
 return [
 
+    'db' => [
+        'dsn' => 'mysql:dbname=portal.dev;host=127.0.0.1',
+        'username' => 'root',
+        'password' => 'root',
+    ],
+
     'controllers' => [
         'factories' => [
             Controller\IndexController::class =>
@@ -41,7 +47,7 @@ return [
             "Facebook" => [
                 "enabled" => true,
                 "keys" => ["id" => "", "secret" => ""], // in development.local.php
-                "scope" => ['email', 'user_about_me', 'user_birthday', 'user_hometown'], // optional
+                "scope" => ['email', 'user_birthday', 'user_hometown'], // optional
                 "photo_size" => 200, // optional
             ],
             "Google" => [

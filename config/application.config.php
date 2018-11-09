@@ -6,6 +6,12 @@
 return [
     // Retrieve list of modules used in this application.
     'modules' => [
+        'MSBios\Cache',
+        'Zend\Cache',
+        'Zend\Serializer',
+        'MSBios\Hydrator',
+        'MSBios\Validator',
+        'Zend\Paginator',
         'MSBios\Authentication\Hybrid\Resource',
         'Zend\I18n',
         'Zend\Navigation',
