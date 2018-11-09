@@ -7,6 +7,7 @@
 namespace MSBios\Authentication\Hybrid;
 
 use MSBios\Authentication\AuthenticationService;
+use MSBios\Authentication\AuthenticationServiceInterface;
 use MSBios\AutoloaderAwareInterface;
 use MSBios\Hybridauth\HybridauthManager;
 use MSBios\Hybridauth\HybridauthManagerInterface;
@@ -34,7 +35,7 @@ class Module implements
 {
 
     /** @const VERSION */
-    const VERSION = '1.0.20';
+    const VERSION = '1.0.21';
 
     /**
      * Returns configuration to merge with application configuration
@@ -79,7 +80,7 @@ class Module implements
         /** @var DefaultAuthenticationServiceInterface $authenticationService */
         $authenticationService = $serviceManager->get(DefaultAuthenticationService::class);
 
-        if ($authenticationService instanceof DefaultAuthenticationServiceInterface) {
+        if ($authenticationService instanceof AuthenticationServiceInterface) {
             /** @var EventManagerInterface $eventManager */
             $eventManager = $authenticationService->getEventManager();
             $eventManager->attach(AuthenticationService::EVENT_CLEAR_IDENTITY, [$this, 'onClearIdentity']);
