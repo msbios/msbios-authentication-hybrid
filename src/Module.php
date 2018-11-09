@@ -35,7 +35,7 @@ class Module implements
 {
 
     /** @const VERSION */
-    const VERSION = '1.0.21';
+    const VERSION = '1.0.22';
 
     /**
      * Returns configuration to merge with application configuration
@@ -83,19 +83,15 @@ class Module implements
         if ($authenticationService instanceof AuthenticationServiceInterface) {
             /** @var EventManagerInterface $eventManager */
             $eventManager = $authenticationService->getEventManager();
-            $eventManager->attach(AuthenticationService::EVENT_CLEAR_IDENTITY, [$this, 'onClearIdentity']);
-        }
-    }
 
-    /**
-     * @param EventInterface $e
-     */
-    public function onClearIdentity(EventInterface $e)
-    {
-        /** @var HybridauthManagerInterface $hybridauthManager */
-        $hybridauthManager = $e->getTarget()
-            ->getServiceManager()
-            ->get(HybridauthManager::class);
-        $hybridauthManager->clearProviders();
+            /** @var callable $onClearIdentity */
+            $onClearIdentity = function (EventInterface $event) use ($serviceManager) {
+                /** @var HybridauthManagerInterface $hybridauthManager */
+                $hybridauthManager = $serviceManager->get(HybridauthManager::class);
+                $hybridauthManager->clearProviders();
+            };
+
+            $eventManager->attach(AuthenticationService::EVENT_CLEAR_IDENTITY, $onClearIdentity);
+        }
     }
 }
