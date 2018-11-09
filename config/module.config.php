@@ -51,15 +51,6 @@ return [
                             ],
                         ],
                     ],
-                    'logout' => [
-                        'type' => Segment::class,
-                        'options' => [
-                            'route' => 'logout[/]',
-                            'defaults' => [
-                                'action' => 'logout'
-                            ]
-                        ],
-                    ],
                 ],
             ],
         ],

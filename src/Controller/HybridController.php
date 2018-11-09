@@ -124,15 +124,4 @@ class HybridController extends IndexController
             $identifier
         );
     }
-
-    /**
-     * @return \Zend\Http\Response
-     */
-    public function logoutAction()
-    {
-        $this->getAuthenticationService()
-            ->clearIdentity();
-        return $this->redirect()
-            ->toRoute('home');
-    }
 }
