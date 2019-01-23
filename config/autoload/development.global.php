@@ -40,9 +40,6 @@ return [
     ],
 
     \MSBios\Hybridauth\Module::class => [
-
-        "base_url" => "http://0.0.0.0:3107/hybridauth/",
-
         "providers" => [
             "Facebook" => [
                 "enabled" => true,

@@ -78,8 +78,16 @@ return [
             Resolver\EmailResolver::class =>
                 InvokableFactory::class,
             Resolver\PhoneResolver::class =>
+                InvokableFactory::class,
+
+            ListenerAggregate::class =>
                 InvokableFactory::class
+
         ]
+    ],
+
+    'listeners' => [
+        ListenerAggregate::class
     ],
 
     Module::class => [
@@ -88,6 +96,7 @@ return [
          *
          */
         'identity_resolvers' => [
+            // ...
         ]
     ]
 ];

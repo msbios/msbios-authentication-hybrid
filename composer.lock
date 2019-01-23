@@ -170,16 +170,16 @@
         },
         {
             "name": "msbios/hybridauth",
-            "version": "v1.0.11",
+            "version": "v1.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/msbios/msbios-hybridauth.git",
-                "reference": "736cda788ee50db4233da9fa4ad6cd7acee3c827"
+                "reference": "98b9fee2706d62507a63bdba18b34dbbeb29bd90"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/msbios/msbios-hybridauth/zipball/736cda788ee50db4233da9fa4ad6cd7acee3c827",
-                "reference": "736cda788ee50db4233da9fa4ad6cd7acee3c827",
+                "url": "https://api.github.com/repos/msbios/msbios-hybridauth/zipball/98b9fee2706d62507a63bdba18b34dbbeb29bd90",
+                "reference": "98b9fee2706d62507a63bdba18b34dbbeb29bd90",
                 "shasum": ""
             },
             "require": {
@@ -216,7 +216,7 @@
             "keywords": [
                 "php"
             ],
-            "time": "2018-11-09T10:26:11+00:00"
+            "time": "2019-01-23T14:56:41+00:00"
         },
         {
             "name": "paypal/rest-api-sdk-php",

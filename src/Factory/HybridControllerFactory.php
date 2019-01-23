@@ -20,10 +20,12 @@ use Zend\ServiceManager\Factory\FactoryInterface;
 class HybridControllerFactory implements FactoryInterface
 {
     /**
+     * @inheritdoc
+     *
      * @param ContainerInterface $container
      * @param string $requestedName
      * @param array|null $options
-     * @return HybridController
+     * @return HybridController|object
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
