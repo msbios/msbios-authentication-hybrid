@@ -15,7 +15,7 @@ use Zend\Authentication\Result as AuthenticationResult;
  */
 class Adapter implements AdapterInterface
 {
-    /** @var  IdentityInterface */
+    /** @var IdentityInterface */
     protected $identity;
 
     /**

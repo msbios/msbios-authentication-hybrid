@@ -8,17 +8,12 @@ namespace MSBios\Authentication\Hybrid;
 
 use MSBios\Authentication\AuthenticationService;
 use MSBios\Authentication\AuthenticationServiceInterface;
-use MSBios\AutoloaderAwareInterface;
 use MSBios\Hybridauth\HybridauthManager;
 use MSBios\Hybridauth\HybridauthManagerInterface;
-use MSBios\ModuleAwareInterface;
-use MSBios\ModuleInterface;
 use Zend\Authentication\AuthenticationService as DefaultAuthenticationService;
 use Zend\Authentication\AuthenticationServiceInterface as DefaultAuthenticationServiceInterface;
 use Zend\EventManager\EventInterface;
 use Zend\EventManager\EventManagerInterface;
-use Zend\Loader\AutoloaderFactory;
-use Zend\Loader\StandardAutoloader;
 use Zend\ModuleManager\Feature\BootstrapListenerInterface;
 use Zend\Mvc\ApplicationInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
@@ -27,47 +22,36 @@ use Zend\ServiceManager\ServiceLocatorInterface;
  * Class Module
  * @package MSBios\Authentication\Hybrid
  */
-class Module implements
-    ModuleInterface,
-    ModuleAwareInterface,
-    AutoloaderAwareInterface,
-    BootstrapListenerInterface
+class Module extends \MSBios\Module implements BootstrapListenerInterface
 {
-
     /** @const VERSION */
-    const VERSION = '1.0.24';
+    const VERSION = '1.0.25';
 
     /**
-     * Returns configuration to merge with application configuration
+     * @inheritdoc
      *
-     * @return array|\Traversable
+     * @return string
      */
-    public function getConfig()
+    protected function getDir()
     {
-        return include __DIR__ . '/../config/module.config.php';
+        return __DIR__;
     }
 
     /**
-     * Return an array for passing to Zend\Loader\AutoloaderFactory.
+     * @inheritdoc
      *
-     * @return array
+     * @return string
      */
-    public function getAutoloaderConfig()
+    protected function getNamespace()
     {
-        return [
-            AutoloaderFactory::STANDARD_AUTOLOADER => [
-                StandardAutoloader::LOAD_NS => [
-                    __NAMESPACE__ => __DIR__,
-                ],
-            ],
-        ];
+        return __NAMESPACE__;
     }
 
     /**
-     * Listen to the bootstrap event
+     * @inheritdoc
      *
      * @param EventInterface $e
-     * @return array
+     * @return array|void
      */
     public function onBootstrap(EventInterface $e)
     {
