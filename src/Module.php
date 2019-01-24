@@ -25,7 +25,7 @@ use Zend\ServiceManager\ServiceLocatorInterface;
 class Module extends \MSBios\Module implements BootstrapListenerInterface
 {
     /** @const VERSION */
-    const VERSION = '1.0.25';
+    const VERSION = '1.0.26';
 
     /**
      * @inheritdoc
@@ -55,27 +55,27 @@ class Module extends \MSBios\Module implements BootstrapListenerInterface
      */
     public function onBootstrap(EventInterface $e)
     {
-        /** @var ApplicationInterface $target */
-        $target = $e->getTarget();
-
-        /** @var ServiceLocatorInterface $serviceManager */
-        $serviceManager = $target->getServiceManager();
-
-        /** @var DefaultAuthenticationServiceInterface $authenticationService */
-        $authenticationService = $serviceManager->get(DefaultAuthenticationService::class);
-
-        if ($authenticationService instanceof AuthenticationServiceInterface) {
-            /** @var EventManagerInterface $eventManager */
-            $eventManager = $authenticationService->getEventManager();
-
-            /** @var callable $onClearIdentity */
-            $onClearIdentity = function (EventInterface $event) use ($serviceManager) {
-                /** @var HybridauthManagerInterface $hybridauthManager */
-                $hybridauthManager = $serviceManager->get(HybridauthManager::class);
-                $hybridauthManager->clearProviders();
-            };
-
-            $eventManager->attach(AuthenticationService::EVENT_CLEAR_IDENTITY, $onClearIdentity);
-        }
+        ///** @var ApplicationInterface $target */
+        //$target = $e->getTarget();
+        //
+        ///** @var ServiceLocatorInterface $serviceManager */
+        //$serviceManager = $target->getServiceManager();
+        //
+        ///** @var DefaultAuthenticationServiceInterface $authenticationService */
+        //$authenticationService = $serviceManager->get(DefaultAuthenticationService::class);
+        //
+        //if ($authenticationService instanceof AuthenticationServiceInterface) {
+        //    /** @var EventManagerInterface $eventManager */
+        //    $eventManager = $authenticationService->getEventManager();
+        //
+        //    /** @var callable $onClearIdentity */
+        //    $onClearIdentity = function (EventInterface $event) use ($serviceManager) {
+        //        /** @var HybridauthManagerInterface $hybridauthManager */
+        //        $hybridauthManager = $serviceManager->get(HybridauthManager::class);
+        //        $hybridauthManager->clearProviders();
+        //    };
+        //
+        //    $eventManager->attach(AuthenticationService::EVENT_CLEAR_IDENTITY, $onClearIdentity);
+        //}
     }
 }

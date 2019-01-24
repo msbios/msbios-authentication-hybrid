@@ -45,8 +45,7 @@ class HybridController extends IndexController
         HybridauthManagerInterface $hybridauthManager,
         ProviderManagerInterface $providerManager,
         IdentityResolverInterface $identityResolver
-    )
-    {
+    ) {
         $this->setAuthenticationService($authenticationService);
         $this->setHybridauthManager($hybridauthManager);
         $this->setProviderManager($providerManager);
@@ -90,7 +89,7 @@ class HybridController extends IndexController
         /** @var AuthenticationServiceInterface $authenticationService */
         $authenticationService = $this->getAuthenticationService();
 
-        if (!$authenticationService->hasIdentity()) {
+        if (! $authenticationService->hasIdentity()) {
             return $this->redirect()->toRoute('home');
         }
 

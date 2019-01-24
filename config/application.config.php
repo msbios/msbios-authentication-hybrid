@@ -6,15 +6,10 @@
 return [
     // Retrieve list of modules used in this application.
     'modules' => [
-        'MSBios\Session',
-        'MSBios\Permissions\Acl',
-        'MSBios\Cache',
+
         'Zend\Cache',
         'Zend\Serializer',
-        'MSBios\Hydrator',
-        'MSBios\Validator',
         'Zend\Paginator',
-        'MSBios\Authentication\Hybrid\Resource',
         'Zend\I18n',
         'Zend\Navigation',
         'Zend\Mvc\Plugin\FilePrg',
@@ -31,6 +26,12 @@ return [
         'Zend\Router',
         'Zend\Validator',
 
+        'MSBios\Session',
+        'MSBios\Permissions\Acl',
+        'MSBios\Cache',
+        'MSBios\Hydrator',
+        'MSBios\Validator',
+        'MSBios\Authentication\Hybrid\Resource',
         'MSBios\Portal',
         'MSBios\Application',
         'MSBios\Theme',
